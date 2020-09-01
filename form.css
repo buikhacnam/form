@@ -62,12 +62,36 @@ body {
 	font-family: inherit;
 }
 
+.form-control input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-control.success input {
+	border-color: #2ecc71;
+}
+
+.form-control.error input {
+	border-color: #e74c3c;
+}
+
 .form-control i {
 	position: absolute;
 	top: 40px;
 	right: 10px;
 	visibility: hidden;
 }
+
+.form-control.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
 
 .form-control small {
 	color: #e74c3c;
@@ -76,6 +100,9 @@ body {
 !!!bottom: 0;
 !!!left: 0;
 
+}
+.form-control.error small {
+	visibility: visible;
 }
 
 .form button {
