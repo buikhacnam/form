@@ -33,13 +33,18 @@ body {
 	margin: 0;
 }
 
+.form {
+	padding: 30px 40px;	
+}
+
 
 
 .form-control {
 	margin-bottom: 10px;
-	padding-bottom: 20px;
 	position: relative;
-	border: 1px solid black;
+!!!	border: 1px solid black;
+!!! padding-bottom: 20px;
+	
 }
 
 .form-control label {
@@ -52,7 +57,7 @@ body {
 	border-radius: 4px;
 	display: block;
 	font-size: 14px;
-	padding: 10pxx;
+	padding: 10px;
 	width: 100%;
 	font-family: inherit;
 }
@@ -61,4 +66,27 @@ body {
 	position: absolute;
 	top: 40px;
 	right: 10px;
+	visibility: hidden;
+}
+
+.form-control small {
+	color: #e74c3c;
+	visibility: hidden;
+!!!position: absolute;
+!!!bottom: 0;
+!!!left: 0;
+
+}
+
+.form button {
+	background-color: lightblue;
+	border: 2px solid lightblue;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
 }
