@@ -34,13 +34,18 @@ function checkInputs() {
 	//check password:
 	if(passwordValue === "") {
 		setErrorFor(password, "Password cannot be blank");
-	} else {
+	} else if (passwordValue.length < 6) {
+		setErrorFor(password, "Password must have at least 6 characters");
+	} 
+	else {
 		setSuccessFor(password);
 	}
 
 	//check password2:
 	if (password2Value !== passwordValue) {
 		setErrorFor(password2, "password does not match");
+	} else if (password2Value === "") {
+		setErrorFor(password2, "Password cannot be blank");
 	} else {
 		setSuccessFor(password2);
 	}

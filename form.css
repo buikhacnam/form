@@ -4,7 +4,7 @@
 }
 
 body {
-	background-color: lightblue;
+	background-color: #66b3ff;
 	font-family: 'Open Sans', sans-serif;
 	display: flex;
 	align-items: center;
@@ -20,7 +20,7 @@ body {
 	width: 400px;
 
 	11max-width: 100%;
-	border: solid red 2px;
+	
 }
 
 .header {
@@ -107,8 +107,8 @@ body {
 }
 
 .form button {
-	background-color: lightblue;
-	border: 2px solid lightblue;
+	background-color: rgb(51, 153, 255);
+	border: 2px solid rgb(51, 153, 255);
 	border-radius: 4px;
 	color: #fff;
 	display: block;
@@ -118,3 +118,4 @@ body {
 	margin-top: 20px;
 	width: 100%;
 }
+
