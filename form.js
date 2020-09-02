@@ -6,7 +6,11 @@ const password2 = document.getElementById('password2');
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
-	checkInputs();
+	if (checkInputs() == true) {
+		social_panel_container.classList.toggle('visible');	
+		document.getElementById("but").disabled = true;
+		
+	} 
 })
 
 function checkInputs() {
@@ -18,6 +22,7 @@ function checkInputs() {
     //check usename:
 	if(usernameValue === "") {
 		setErrorFor(username, "Username cannot be blank");
+		return false;
 	} else {
 		setSuccessFor(username);
 	}
@@ -25,8 +30,10 @@ function checkInputs() {
 	//check email:
 	if(emailValue === "") {
 		setErrorFor(email, "Email cannot be blank");
+		return false;
 	} else if (!isEmail(emailValue)) {
 		setErrorFor(email, "Not a valid email");
+		return false;
 	} else {
 		setSuccessFor(email);
 	}
@@ -34,8 +41,10 @@ function checkInputs() {
 	//check password:
 	if(passwordValue === "") {
 		setErrorFor(password, "Password cannot be blank");
+		return false;
 	} else if (passwordValue.length < 6) {
 		setErrorFor(password, "Password must have at least 6 characters");
+		return false;
 	} 
 	else {
 		setSuccessFor(password);
@@ -44,11 +53,14 @@ function checkInputs() {
 	//check password2:
 	if (password2Value !== passwordValue) {
 		setErrorFor(password2, "password does not match");
+		return false;
 	} else if (password2Value === "") {
 		setErrorFor(password2, "Password cannot be blank");
+		return false;
 	} else {
 		setSuccessFor(password2);
 	}
+	return true;
 }
 
 function setErrorFor(input, message) {
@@ -66,3 +78,18 @@ function setSuccessFor(input) {
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+
+
+// slide in message
+
+
+const close_btn = document.querySelector('.close-btn');
+const social_panel_container = document.querySelector('.social-panel-container');
+
+
+
+close_btn.addEventListener('click', () => {
+	social_panel_container.classList.remove('visible');
+	document.getElementById("but").disabled = false;
+});
