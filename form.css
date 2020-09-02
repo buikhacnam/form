@@ -127,11 +127,12 @@ body {
 	right: 0;
 	bottom: 80px;
 	transform: translateX(100%);
+	transform: translateX(100%);
 	transition: transform 0.5s ease-in-out;
 }
 
 .social-panel-container.visible {
-	transform: translateX(-10px);
+	transform: translateX(-20px);
 }
 
 
@@ -187,7 +188,7 @@ body {
 }
 
 .social-panel p a {
-	color: #fff;
+	color: #001F61;
 	text-decoration: none;
 }
 
@@ -198,7 +199,5 @@ body {
 		transform: translateX(0px);
 	}
 	
-	.floating-btn {
-		right: 10px;
-	}
+	
 }

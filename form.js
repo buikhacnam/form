@@ -4,15 +4,23 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 const thanks = document.getElementById('thanks');
-//const input = document.querySelector('input');
+const but = document.getElementById('but');
+//const input = document.querySelectorAll('.form-control');
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	if (checkInputs() == true) {
-		thanks.innerText = username.value.trim();
+		thanks.innerText = username.value.trim().toUpperCase();
 		social_panel_container.classList.toggle('visible');	
-		document.getElementById("but").disabled = true;
+		but.disabled = true;
+		username.disabled = true;
+		email.disabled = true;
+		password.disabled = true;
+		password2.disabled = true;
+		
+
 	/*
+
 		form.style.background = "#c3d5d5";
 		username.style.background = "#c3d5d5";
 		email.style.background = "#c3d5d5";
@@ -32,7 +40,11 @@ function checkInputs() {
 	if(usernameValue === "") {
 		setErrorFor(username, "Username cannot be blank");
 		return false;
-	} else {
+	} else if (usernameValue.length > 10) {
+		setErrorFor(username, "name needs to be shorter than 10 characters");
+		return false;
+	}
+	 else {
 		setSuccessFor(username);
 	}
 
@@ -51,7 +63,7 @@ function checkInputs() {
 	if(passwordValue === "") {
 		setErrorFor(password, "Password cannot be blank");
 		return false;
-	} else if (passwordValue.length < 6) {
+	} else if (passwordValue.length < 4) {
 		setErrorFor(password, "Password must have at least 6 characters");
 		return false;
 	} 
@@ -84,6 +96,8 @@ function setSuccessFor(input) {
 	formControl.className = "form-control success";
 }
 
+
+
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
@@ -101,11 +115,21 @@ const social_panel_container = document.querySelector('.social-panel-container')
 close_btn.addEventListener('click', () => {
 	social_panel_container.classList.remove('visible');
 	document.getElementById("but").disabled = false;
-		/*
-		form.style.background = "white";
-		username.style.background = "white";
-		email.style.background = "white";
-		password.style.background = "white";
-		password2.style.background = "white";
-		*/
+	const inputAll = [username, email, password, password2];
+	for (let i = 0; i < inputAll.length; i++) {
+		inputAll[i].disabled = false;
+		inputAll[i].value = "";
+		inputAll[i].parentNode.className = "form-control";
+	}
+    /*
+	username.disabled = false;
+	username.value = "";
+	username.parentNode.className = "form-control";
+	email.disabled = false;
+	email.value = "";
+	password.disabled = false;
+	password.value = "";
+	password2.disabled = false;
+	password2.value = "";
+	*/
 });
