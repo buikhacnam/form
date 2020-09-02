@@ -3,13 +3,22 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
+const thanks = document.getElementById('thanks');
+//const input = document.querySelector('input');
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	if (checkInputs() == true) {
+		thanks.innerText = username.value.trim();
 		social_panel_container.classList.toggle('visible');	
 		document.getElementById("but").disabled = true;
-		
+	/*
+		form.style.background = "#c3d5d5";
+		username.style.background = "#c3d5d5";
+		email.style.background = "#c3d5d5";
+		password.style.background = "#c3d5d5";
+		password2.style.background = "#c3d5d5";
+	*/	
 	} 
 })
 
@@ -92,4 +101,11 @@ const social_panel_container = document.querySelector('.social-panel-container')
 close_btn.addEventListener('click', () => {
 	social_panel_container.classList.remove('visible');
 	document.getElementById("but").disabled = false;
+		/*
+		form.style.background = "white";
+		username.style.background = "white";
+		email.style.background = "white";
+		password.style.background = "white";
+		password2.style.background = "white";
+		*/
 });

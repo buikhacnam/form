@@ -127,7 +127,7 @@ body {
 	right: 0;
 	bottom: 80px;
 	transform: translateX(100%);
-	transition: transform 0.4s ease-in-out;
+	transition: transform 0.5s ease-in-out;
 }
 
 .social-panel-container.visible {
@@ -139,7 +139,7 @@ body {
 	background-color: #fff;
 	border-radius: 16px;
 	box-shadow: 0 16px 31px -17px rgba(0,31,97,0.6);
-	border: 5px solid #001F61;
+	border: 5px solid #FF7500;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -152,7 +152,7 @@ body {
 }
 
 .social-panel p {
-	background-color: #001F61;
+	background-color: #FF7500;
 	border-radius: 0 0 10px 10px;
 	color: #fff;
 	font-size: 14px;
@@ -183,11 +183,11 @@ body {
 
 .social-panel p i {
 	margin: 0 5px;
-	color: #FF7500;
+	color: #fff;
 }
 
 .social-panel p a {
-	color: #FF7500;
+	color: #fff;
 	text-decoration: none;
 }
 
