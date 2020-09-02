@@ -5,19 +5,19 @@ const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 const thanks = document.getElementById('thanks');
 const but = document.getElementById('but');
-//const input = document.querySelectorAll('.form-control');
+const close_btn = document.querySelector('.close-btn');
+const message_panel_container = document.querySelector('.message-panel-container');
+
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	if (checkInputs()) {
 		thanks.innerText = username.value.trim().toUpperCase();
-		social_panel_container.classList.toggle('visible');	
-		but.disabled = true;
-		username.disabled = true;
-		email.disabled = true;
-		password.disabled = true;
-		password2.disabled = true;
-
+		message_panel_container.classList.toggle('visible');	
+		const turnOff = [but, username, email, password, password2];
+		turnOff.forEach(element => {
+			return element.disabled = true;
+		})
 	} 
 })
 
@@ -99,30 +99,14 @@ function isEmail(email) {
 
 // slide in message
 
-
-const close_btn = document.querySelector('.close-btn');
-const social_panel_container = document.querySelector('.social-panel-container');
-
-
-
 close_btn.addEventListener('click', () => {
-	social_panel_container.classList.remove('visible');
+	message_panel_container.classList.remove('visible');
 	document.getElementById("but").disabled = false;
-	const inputAll = [username, email, password, password2];
-	for (let i = 0; i < inputAll.length; i++) {
-		inputAll[i].disabled = false;
-		inputAll[i].value = "";
-		inputAll[i].parentNode.className = "form-control";
-	}
-    /*
-	username.disabled = false;
-	username.value = "";
-	username.parentNode.className = "form-control";
-	email.disabled = false;
-	email.value = "";
-	password.disabled = false;
-	password.value = "";
-	password2.disabled = false;
-	password2.value = "";
-	*/
+	const turnOn = [username, email, password, password2];
+	turnOn.forEach(element => {
+				element.disabled = false;
+			    element.value = "";
+			    element.parentNode.className = "form-control";
+	})
+
 });
