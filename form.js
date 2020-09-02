@@ -9,7 +9,7 @@ const but = document.getElementById('but');
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
-	if (checkInputs() == true) {
+	if (checkInputs()) {
 		thanks.innerText = username.value.trim().toUpperCase();
 		social_panel_container.classList.toggle('visible');	
 		but.disabled = true;
@@ -17,16 +17,7 @@ form.addEventListener('submit', e => {
 		email.disabled = true;
 		password.disabled = true;
 		password2.disabled = true;
-		
 
-	/*
-
-		form.style.background = "#c3d5d5";
-		username.style.background = "#c3d5d5";
-		email.style.background = "#c3d5d5";
-		password.style.background = "#c3d5d5";
-		password2.style.background = "#c3d5d5";
-	*/	
 	} 
 })
 
@@ -81,6 +72,8 @@ function checkInputs() {
 	} else {
 		setSuccessFor(password2);
 	}
+
+	//if all is good:
 	return true;
 }
 

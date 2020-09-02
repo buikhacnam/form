@@ -180,12 +180,20 @@ body {
 
 .social-panel button.close-btn:focus {
 	outline: none;
+
+}
+
+.social-panel button i:hover {
+	color: red;
+	
 }
 
 .social-panel p i {
 	margin: 0 5px;
 	color: #fff;
 }
+
+
 
 .social-panel p a {
 	color: #001F61;
