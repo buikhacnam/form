@@ -122,21 +122,21 @@ body {
 
 /* slide in message */
 
-.social-panel-container {
+.message-panel-container {
 	position: fixed;
 	right: 0;
 	bottom: 80px;
 	transform: translateX(100%);
-	transform: translateX(100%);
+	
 	transition: transform 0.5s ease-in-out;
 }
 
-.social-panel-container.visible {
+.message-panel-container.visible {
 	transform: translateX(-20px);
 }
 
 
-.social-panel {	
+.message-panel {	
 	background-color: #fff;
 	border-radius: 16px;
 	box-shadow: 0 16px 31px -17px rgba(0,31,97,0.6);
@@ -152,7 +152,7 @@ body {
 	max-width: calc(100% - 10px);
 }
 
-.social-panel p {
+.message-panel p {
 	background-color: #FF7500;
 	border-radius: 0 0 10px 10px;
 	color: #fff;
@@ -168,7 +168,7 @@ body {
 	width: 235px;
 }
 
-.social-panel button.close-btn {
+.message-panel button.close-btn {
 	border: 0;
 	color: #97A5CE;
 	cursor: pointer;
@@ -178,24 +178,24 @@ body {
 	right: 5px;
 }
 
-.social-panel button.close-btn:focus {
+.message-panel button.close-btn:focus {
 	outline: none;
 
 }
 
-.social-panel button i:hover {
+.message-panel button i:hover {
 	color: red;
 	
 }
 
-.social-panel p i {
+.message-panel p i {
 	margin: 0 5px;
 	color: #fff;
 }
 
 
 
-.social-panel p a {
+.message-panel p a {
 	color: #001F61;
 	text-decoration: none;
 }
